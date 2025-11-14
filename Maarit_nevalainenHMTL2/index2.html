@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pizza and beer moments</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3dddd;
+    }
+     h1 {
+      color: #641864;
+      font-family: 'Georgia', sans-serif;}
+      .small-text {
+  font-size: 12px !important;
+}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Best value for your bucks!</h1>
+    <nav>
+        <a href="#account">Create account</a>
+        <a href="#media">Media links</a>
+
+    </nav>
+    <p>
+        Fill this form with Find the best food or drink (or both!) deal at a restaurant that suits your style! 
+    </p>
+    <nav></nav>
+</header>
+<main>   
+     <section id="pizza" class="form selection">
+        <form action="/submit" method="post" autocomplete="on"></form><br><br>
+        <h3>Enter your choices</h3>
+        <article>
+            <label for="list">How much do you wish to spend in euros at most to a pizza & drink (per person)</label><br>
+                <select id="budget" name="money"> <!---budget-->
+                    <option value="5-10">5-10</option>
+                    <option value="10-15">10-15</option>
+                    <option value="15-20">15-20</option>
+                    <option value="20-25">25-22</option>
+                    <option value="25">above 25</option>
+                </select><br><br>
+        
+            <label>Discount type</label><br> <!--what kind of discount-->
+                <input type="radio" name="discounts" value="studentdiscount">Eligibility for student discount<br>
+                <input type="radio" name="discounts" value="Happy hour">Happy hour<br>
+                <input type="radio" name="discounts" value="S-bonus">S-bonus deals<br><br>
+            <label>What kind of drink you are looking for?</label><br><!--discount drinks -->
+                <input type="radio" name="pizza" value="beer">Beer<br>
+                <input type="radio" name="pizza" value="Wine bottle">Wine bottle<br>
+                <input type="radio" name="pizza" value="Wine by Glass">Wine by glass<br>
+                <input type="radio" name="pizza" value="softdrink">Soft drink<br>
+                <input type="radio" name="pizza" value="NoDrink">No Drink<br><br>
+            <label>What kind of food you are looking for?</label><br>
+                <input type="radio" name="pizza" value="Food">Any food<br>
+                <input type="radio" name="pizza" value="Hamburger">Hamburger<br>
+                <input type="radio" name="pizza" value="Pizza">Pizza<br>
+                <input type="radio" name="pizza" value="No Food">No food<br><br>
+            <label>Food options</label><br> <!--food details-->
+                <input type="checkbox" name="glutenfreeoptions">Gluten Free options<br>
+                <input type="checkbox" name="veganoptions">Vegan options<br>
+                <input type="checkbox" name="vegetarianoptions">Vegetarian options<br>
+                <input type="checkbox" name="meatoptions">Meat options<br>
+                <input type="checkbox" name="seafoodoptions">Sea food options<br>
+                <input type="checkbox" name="Nopreference">No preference<br><br>
+            <label>Restaurant requirements, choose your preferences:</label><br>
+                <input type="checkbox" name="beer" value="beer">Selling beer<br>
+                <input type="checkbox" name="wine" value="wine">Selling wine<br>
+                <input type="checkbox" name="spirits" value="spirits">Selling spirits and other alcohol<br>
+                <input type="checkbox" name="noalcohol" value="noalcohol">No alcohol license<br>
+                <input type="checkbox" name="outdoorarea" value="outdoorarea">Outdoor seating Area<br>
+                <input type="checkbox" name="indoorarea" value="indoorarea">Indoor seating Area<br>
+                <input type="checkbox" name="music" value="music">Music played in the dining area<br>
+                <input type="checkbox" name="dogs" value="dogs">Dogs Welcome<br>
+                <input type="checkbox" name="kids" value="kids">Kids corner<br>
+                <input type="checkbox" name="nopref" value="noPrefenrece">No preference<br><br>
+             
+            <label>City</label><br> <!--area-->
+            <input list="city" name="place">
+                <datalist id="city">
+                <option value="Helsinki">helsinki</option><br>
+                <option value="Espoo">espoo</option><br>
+                <option value="Tampere">tampere</option><br>
+                <option value="Joensuu">joensuu</option><br>
+                <option value="Vantaa">vantaa</option><br>
+                <option value="Turku">turku</option><br>
+                </datalist><br><br>        
+                     <style>
+            .slidecontainer {width: 30%;}
+            .slider {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 10px;
+                border-radius: 2px;
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;}
+            .slider:hover {
+                opacity: 1;}
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 10px;
+                height: 15px;
+                border-radius: 30%;
+                background: #04AA6D;
+                cursor: pointer;}
+            .slider::-moz-range-thumb {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background: #d8cb18;
+                cursor: pointer;}
+            </style>
+    <h4>Distance from the central in km</h4>
+        <div class="slidecontainer">
+            <p>Kilometres <span id="demo"></span></p>
+            <input type="range" min="1" max="15" value="1" slider="1" id="myRange">
+         </div>
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+            }       
+        </script><br>
+        <label>To continue, we need to confirm you are 18 or older. Please enter your age:
+            <input type="number" name="age" min="18" max="120">
+        </label>
+        </article>       
+    </section>
+    
+    <section id="booking" class="booking"> <!--creating account details-->
+        <h4>Create account for best benefits</h4>
+        <article id="account">        
+        <p>If you would like to continue to booking or just to receive the information, create account and continue. 
+            <br><br>You will receive your unique discount code which gives you extra 10% of the restaurant you find via this website</p>
+            
+            <label>Full name: <input type="text" placeholder="Your name here"></label><br>
+            <label>Email: <input type="text" placeholder="@" required pattern="@"></label><br>
+            <label for="password">Create a password:</label><input type="password" id="password" name="passwordrequired"><br><br>
+            <label>Special requests or questions to the restaurant:<br>
+                    <textarea name="questions" rows="5" cols="35" placeholder="Special requests or questions to the restaurant" minlength="0" maxlength="50">
+                   </textarea></label><br><br>
+            <label>Estimate number of guests <input type="number" name="quests" min="1" max="20"></label><br><br>
+                    <label for="list">I wish to join to mailing list and receive information on the latest offers</label><br>
+                        <select id="list" name="list">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        <option value="later">Maybe later</option>
+                        </select><br><br>
+                <input type="submit" value="Submit" aria-label="Submit to receive the discount info">
+                    <p>Submit the form to see a list of discounts based on your choices</p><br><br> 
+                    <aside id="quote"><em>The cheapest pizza or beer is waiting for you just behind few cliks</em>
+                    </aside><br><br>
+                <label class="small-text">Customer referral code for DiscountPzzaLvrs use (DISABLED)
+                <input class="small-text" type="text" value="Pzza6273546" disabled></label><br>
+                <label class="small-text">Discount code (readonly). The number will be generated after submission.
+                <input class="small-text" type="text" value="Cheapxxxxxx" readonly></label><br>
+            </article>
+    </section>
+        <article id="media">   
+            <p class="small-text"><em>if you are not yet interested eating out, here is recipe and video for the best home cooked sourdough pizza</em> 
+            </p>
+                <embed src="https://www.the-tg.com/uploads/documents/Magazine/Issue%2003%202020/38-39%20Food.pdf" type="application/pdf" width="500" height="400"><br>
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/wRIgnHcZIzk?si=B69rQxp7s5_VQPk-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br><br>
+                <figure>
+                   <img src="red-purchase-bag.jpg"
+                    alt="logo"
+                    width="250">
+                    <figcaption>Official DiscountPzzaLvrs ltd. logo</figcaption>
+                </figure>
+        </article> 
+</main>
+<footer>
+Contact details:<br>
+
+DiscountPzzaLvrs ltd.
+
+
+</footer>
+
+</body>
+</html>
